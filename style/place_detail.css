@@ -893,7 +893,7 @@ body {
 /* footer section  */
 
 .custom-footer {
-    background: #111927;
+   background: linear-gradient(135deg, #0b0e19, #141a32);
     color: #f1f1f1;
     padding: 60px 20px 30px;
     font-family: 'Segoe UI', sans-serif;
