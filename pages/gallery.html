@@ -8,7 +8,7 @@
 
 
     <!-- css link -->
-    <link rel="stylesheet" href="../style/blog.css">
+    <link rel="stylesheet" href="../style/gallery.css">
 
     <!-- font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -45,11 +45,11 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="places.html">Places</a></li>
-                <li><a href="wonder.html">7 Wonders</a></li>
+                <li><a href="wonder.html" >7 Wonders</a></li>
                 <li><a href="travel_guide.html">Guide</a></li>
-                <li><a href="blog.html" class="active">Blog</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="gallery.html">About</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                  <li><a href="gallery.html">About</a></li>
             </ul>
             <div class="menu-icon" id="menu-icon">
                 <i class="fas fa-bars"></i>
@@ -68,7 +68,7 @@
                 <li><a href="travel_guide.html">Guide</a></li>
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="gallery.html">About</a></li>
+                  <li><a href="gallery.html">About</a></li>
             </ul>
         </div>
     </header>
@@ -81,57 +81,115 @@
 
     <section class="page-hero">
         <div class="page-hero-content">
-            <h1>Travel Insights & Stories</h1>
-            <p>Explore our latest blogs filled with inspiring travel stories, tips, and hidden historical gems.</p>
-        </div>
-    </section>
+            <h1>Historical Wonders Through the Lens</h1>
+            <p>Embark on a visual journey through the world’s most breathtaking landmarks and timeless marvels.</p>
 
-
-    <!-- featured-blog  -->
-
-
-    <section class="featured-blog">
-        <div class="featured-content">
-            <div class="featured-image">
-                <img src="../assets/images/taj mahal.jpg" alt="Featured Travel Blog">
-            </div>
-            <div class="featured-text">
-                <h2>Unveiling the Magic of the Taj Mahal</h2>
-                <p>Discover the timeless beauty, romance, and architectural brilliance behind India’s most iconic
-                    monument. From sunrise serenity to cultural insights, this story takes you closer than ever.</p>
-                <a href="#" class="read-more-btn">Read Full Story</a>
-            </div>
         </div>
     </section>
 
 
 
+<!-- Gallery Grid Section  -->
+    <section class="gallery-showcase">
+  <div class="gallery-header">
+    <h2>Explore Iconic Moments</h2>
+    <p>A curated collection of historical and architectural brilliance from around the globe.</p>
+  </div>
 
-    <!-- Search & Filter -->
-    <section class="blog-filter-bar">
-        <div class="filter-container">
-            <input type="text" placeholder="Search blog posts..." id="searchInput" class="blog-search" />
-            <select id="categoryFilter" class="blog-category">
-                <option value="">All Categories</option>
-                <option value="history">History</option>
-                <option value="culture">Culture</option>
-                <option value="architecture">Architecture</option>
-                <option value="adventure">Adventure</option>
-            </select>
-        </div>
-    </section>
+<div class="gallery-grid">
+  <div class="gallery-card">
+    <img src="../assets/images/taj mahal.jpg" alt="Taj Mahal" class="lightbox-trigger">
+    <div class="gallery-caption">Taj Mahal, India</div>
+  </div>
+  <div class="gallery-card">
+    <img src="../assets/images/Chichen Itza.jpg" alt="Chichen Itza" class="lightbox-trigger">
+    <div class="gallery-caption">Chichen Itza, Mexico</div>
+  </div>
+  <div class="gallery-card">
+    <img src="../assets/images/petra-night.jpg" alt="Petra" class="lightbox-trigger">
+    <div class="gallery-caption">Petra, Jordan</div>
+  </div>
+  <div class="gallery-card">
+    <img src="../assets/images/great wall of china.jpg" alt="Great Wall of China" class="lightbox-trigger">
+    <div class="gallery-caption">Great Wall of China</div>
+  </div>
+  <div class="gallery-card">
+    <img src="../assets/images/colosseum-sunset.jpg" alt="Colosseum" class="lightbox-trigger">
+    <div class="gallery-caption">Colosseum, Italy</div>
+  </div>
+  <div class="gallery-card">
+    <img src="../assets/images/christ-redeemer-rio.jpg" alt="Christ the Redeemer" class="lightbox-trigger">
+    <div class="gallery-caption">Christ the Redeemer, Brazil</div>
+  </div>
+</div>
 
-    <!-- Blog Grid -->
-    <section class="blog-grid-section">
-        <div class="section-header">
-            <h2>Latest Blog Posts</h2>
-            <p>Explore our newest stories, tips, and insights about historical places and travel wonders.</p>
-        </div>
 
-        <div id="blogGrid" class="blog-grid"></div>
 
-        <div class="pagination" id="pagination"></div>
-    </section>
+<!-- Filterable Gallery   -->
+
+
+<section class="gallery-filter-section">
+  <div class="filter-title">
+    <h2>Filter by Category</h2>
+    <p>Explore visuals by specific themes and wonders.</p>
+  </div>
+
+  <div class="filter-tabs">
+    <button class="tab-btn active" data-category="all">All</button>
+    <button class="tab-btn" data-category="wonders">Wonders</button>
+    <button class="tab-btn" data-category="architecture">Architecture</button>
+    <button class="tab-btn" data-category="culture">Culture</button>
+    <button class="tab-btn" data-category="nature">Nature</button>
+  </div>
+<div class="filtered-gallery-grid">
+  <div class="gallery-card" data-category="wonders">
+    <img src="../assets/images/taj mahal.jpg" alt="Taj Mahal" class="lightbox-trigger">
+  </div>
+  <div class="gallery-card" data-category="architecture">
+    <img src="../assets/images/colosseum-sunset.jpg" alt="Colosseum" class="lightbox-trigger">
+  </div>
+  <div class="gallery-card" data-category="culture">
+    <img src="../assets/images/petra-night.jpg" alt="Petra" class="lightbox-trigger">
+  </div>
+  <div class="gallery-card" data-category="nature">
+    <img src="../assets/images/machu-picchu-mountains.jpg" alt="Machu Picchu" class="lightbox-trigger">
+  </div>
+  <div class="gallery-card" data-category="wonders">
+    <img src="../assets/images/christ-redeemer-rio.jpg" alt="Christ the Redeemer" class="lightbox-trigger">
+  </div>
+  <!-- Add more images as needed -->
+</div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Lightbox Overlay -->
+<div id="lightbox-overlay">
+  <span id="lightbox-close">×</span>
+  <img id="lightbox-image" src="" alt="Full Image">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -195,7 +253,7 @@
 
 
 
-    <script src="../javascript/blog.js"></script>
+    <script src="../javascript/gallery.js"></script>
 </body>
 
 </html>
