@@ -683,6 +683,7 @@ body {
 /* blog section  */
 
 .blog-section {
+  width: 100%;
   padding: 80px 30px;
   background-color: #0f1626;
   text-align: center;
