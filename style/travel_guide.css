@@ -1,0 +1,779 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Root Variables */
+:root {
+    --bg-dark: #131a2a;
+    --accent: #f9a825;
+    --text-light: #f5f5f5;
+    --hover-glow: rgba(249, 168, 37, 0.7);
+    --menu-bg: rgba(19, 26, 42, 0.97);
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0e1220;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #0c1120;
+    color: var(--text-light);
+    font-size: 14px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.top-bar-left i,
+.top-bar-right i {
+    margin-right: 8px;
+    color: var(--accent);
+}
+
+.top-bar-right a {
+    color: var(--text-light);
+    margin-left: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.top-bar-right a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--bg-dark);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--hover-glow);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    height: 3px;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.3s ease;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+    width: 100%;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--accent);
+    text-shadow: 0 0 6px var(--hover-glow);
+}
+
+/* Menu Icon */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: var(--accent);
+    cursor: pointer;
+    z-index: 1200;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    background: var(--menu-bg);
+    backdrop-filter: blur(8px);
+    transition: right 0.4s ease;
+    padding: 60px 20px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.6);
+}
+
+.mobile-menu.show {
+    right: 0;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.mobile-menu ul li a {
+    font-size: 22px;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+    color: var(--accent);
+    transform: translateX(10px) scale(1.05);
+    text-shadow: 0 0 8px var(--hover-glow);
+}
+
+/* Close Icon */
+.close-icon {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 28px;
+    color: var(--accent);
+    cursor: pointer;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .top-bar {
+        font-size: 13px;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        padding: 12px 10px;
+    }
+
+    .top-bar-right {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .top-bar-right a {
+        margin: 8px 10px;
+    }
+}
+
+
+
+
+
+
+/* hero section  */
+
+.page-hero {
+    position: relative;
+    height: 50vh;
+    background: url('../assets/images/discover-history.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--accent);
+    overflow: hidden;
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* low opacity dark overlay */
+    pointer-events: none;
+    z-index: 1;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.page-hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 12px var(--hover-glow);
+    margin: 0;
+}
+
+.page-hero-content p {
+    font-size: 1.5rem;
+    margin-top: 12px;
+    color: var(--text-light);
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .page-hero {
+        height: 40vh;
+        padding: 0 20px;
+    }
+
+    .page-hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-hero-content p {
+        font-size: 1rem;
+    }
+}
+
+
+
+
+/* why-travel-guides section  */
+
+
+.why-travel-guides {
+  background-color: #1a2238;
+  padding: 60px 20px;
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.why-travel-guides .section-title {
+  color: #f9a825;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(249, 168, 37, 0.7);
+}
+
+.why-travel-guides .section-subtitle {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  color: #d7ce93;
+}
+
+.guide-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.benefit-card {
+  background-color: #222b48;
+  padding: 30px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(249, 168, 37, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(249, 168, 37, 0.6);
+}
+
+.benefit-icon {
+  font-size: 2.5rem;
+  color: #f9a825;
+  margin-bottom: 15px;
+  text-shadow: 0 0 6px rgba(249, 168, 37, 0.7);
+}
+
+.benefit-card h3 {
+  color: #f9a825;
+  margin-bottom: 10px;
+}
+
+.benefit-card p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  line-height: 1.5;
+}
+
+
+
+/* travel-categories-section  */
+
+.travel-categories {
+  background-color: #0e1220;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.travel-categories .section-title {
+  color: #f9a825;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px rgba(249, 168, 37, 0.7);
+  margin-bottom: 10px;
+}
+
+.travel-categories .section-subtitle {
+  color: #dcd4a6;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(249, 168, 37, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+}
+
+.category-overlay h3 {
+  color: #f9a825;
+  margin: 0;
+  font-size: 1.3rem;
+  text-shadow: 0 0 5px rgba(249, 168, 37, 0.8);
+}
+
+
+
+
+
+/* Featured Travel Tips  */
+
+
+
+.featured-tips {
+  background-color: #1a2238;
+  padding: 70px 20px;
+  text-align: center;
+  box-shadow: inset 0 0 30px rgba(249, 168, 37, 0.1);
+}
+
+.featured-tips .section-title {
+  color: #f9a825;
+  font-size: 2.2rem;
+  text-shadow: 0 0 10px rgba(249, 168, 37, 0.6);
+  margin-bottom: 10px;
+}
+
+.featured-tips .section-subtitle {
+  color: #d4ca77cc;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+  font-size: 1.1rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tip-box {
+  background-color: #222b48;
+  border-radius: 15px;
+  padding: 25px 20px;
+  box-shadow: 0 0 15px rgba(249, 168, 37, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.tip-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(249, 168, 37, 0.7);
+}
+
+.tip-icon {
+  font-size: 3rem;
+  color: #f9a825;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(249, 168, 37, 0.7);
+}
+
+.tip-box h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #f9a825;
+}
+
+.tip-box p {
+  color: #e0d987cc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+
+
+
+
+/* Essential Travel Checklist  */
+
+
+
+.travel-checklist {
+  background-color: #0e1220;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.travel-checklist .section-title {
+  color: #f9a825;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(249, 168, 37, 0.6);
+}
+
+.travel-checklist .section-subtitle {
+  color: #d4ca77cc;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checklist-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  color: #e0d987cc;
+  font-size: 1rem;
+}
+
+.checklist-grid li {
+  background-color: #1a2238;
+  padding: 18px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(249, 168, 37, 0.2);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.checklist-grid li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 18px rgba(249, 168, 37, 0.5);
+}
+
+.checklist-grid li i {
+  color: #f9a825;
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+
+
+
+
+
+/* travel-map  */
+
+.travel-map {
+  background-color: #1a2238;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.travel-map .section-title {
+  color: #f9a825;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(249, 168, 37, 0.6);
+}
+
+.travel-map .section-subtitle {
+  color: #e0d987cc;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.region-card {
+  background-color: #0e1220;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 14px rgba(249, 168, 37, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.region-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 22px rgba(249, 168, 37, 0.5);
+}
+
+.region-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.region-card h3 {
+  color: #f9a825;
+  padding: 16px;
+  margin: 0;
+  font-size: 1.2rem;
+  background-color: #12192f;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* footer section  */
+
+.custom-footer {
+  background: linear-gradient(135deg, #0b0e19, #141a32);
+    color: #f1f1f1;
+    padding: 60px 20px 30px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1 1 250px;
+    min-width: 250px;
+}
+
+.footer-about h2 {
+    color: #f9a825;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.footer-about p {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    font-size: 18px;
+    color: var(--accent, #f9a825);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #fff7c4;
+    transform: scale(1.2);
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-newsletter h3 {
+    font-size: 20px;
+    margin-bottom: 18px;
+    color: var(--accent, #f9a825);
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: #f1f1f1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent, #f9a825);
+    text-shadow: 0 0 6px rgba(249, 168, 37, 0.6);
+}
+
+.footer-contact p {
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.85;
+}
+
+.footer-contact i {
+    color: var(--accent, #f9a825);
+}
+
+.footer-newsletter p {
+    font-size: 14px;
+    margin-bottom: 14px;
+    opacity: 0.9;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    padding: 12px 16px;
+    border-radius: 25px;
+    border: none;
+    flex: 1 1 180px;
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: none;
+    background: var(--accent, #f9a825);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    transform: scale(1.05);
+    background: #fff176;
+    box-shadow: 0 0 10px rgba(249, 168, 37, 0.7);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    font-size: 14px;
+    opacity: 0.5;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .footer-col {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .newsletter-form {
+        justify-content: center;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
