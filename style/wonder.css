@@ -218,7 +218,6 @@ body {
 
 
 /* hero section  */
-
 .page-hero {
     position: relative;
     height: 50vh;
@@ -238,13 +237,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
     /* low opacity dark overlay */
     pointer-events: none;
     z-index: 1;
 }
 
 .page-hero-content {
+    width: 60%;
     position: relative;
     z-index: 2;
 }
@@ -270,6 +270,10 @@ body {
         padding: 0 20px;
     }
 
+    .page-hero-content {
+        width: 100%;
+    }
+
     .page-hero-content h1 {
         font-size: 2.2rem;
     }
@@ -280,10 +284,12 @@ body {
 }
 
 
+
+
 /* wonder grid section  */
 
 .wonders-section {
-  background: linear-gradient(135deg, #0b0e19, #141a32);
+    background: linear-gradient(135deg, #0b0e19, #141a32);
     color: #f5f5f5;
     padding: 60px 20px;
     font-family: 'Segoe UI', sans-serif;
@@ -423,147 +429,148 @@ body {
 
 /* travel guide  */
 .travel-guide {
-  background: linear-gradient(135deg, #0b0e19, #141a32);
-  color: #f5f5f5;
-  padding: 60px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0b0e19, #141a32);
+    color: #f5f5f5;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .section-title {
-  color: #f9a825;
-  font-size: 2.4rem;
-  text-align: center;
-  margin-bottom: 15px;
-  text-shadow: 0 0 15px rgba(249, 168, 37, 0.85);
-  letter-spacing: 1.2px;
-  font-weight: 700;
+    color: #f9a825;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(249, 168, 37, 0.85);
+    letter-spacing: 1.2px;
+    font-weight: 700;
 }
 
 .section-subtitle {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 50px auto;
-  font-size: 1.2rem;
-  color: #e0d987cc;
-  font-style: italic;
-  letter-spacing: 0.05em;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 50px auto;
+    font-size: 1.2rem;
+    color: #e0d987cc;
+    font-style: italic;
+    letter-spacing: 0.05em;
 }
 
 .tips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 35px;
-  max-width: 1000px;
-  margin: 0 auto;
-  perspective: 800px; /* subtle 3D depth */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 35px;
+    max-width: 1000px;
+    margin: 0 auto;
+    perspective: 800px;
+    /* subtle 3D depth */
 }
 
 .tip-card {
-  background: linear-gradient(145deg, #1f2949, #1a2238);
-  border-radius: 18px;
-  padding: 28px 22px;
-  box-shadow:
-    0 0 10px rgba(249, 168, 37, 0.2),
-    inset 0 0 12px rgba(249, 168, 37, 0.15);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), 
-              box-shadow 0.4s ease, 
-              background 0.3s ease;
-  cursor: default;
-  will-change: transform, box-shadow;
+    background: linear-gradient(145deg, #1f2949, #1a2238);
+    border-radius: 18px;
+    padding: 28px 22px;
+    box-shadow:
+        0 0 10px rgba(249, 168, 37, 0.2),
+        inset 0 0 12px rgba(249, 168, 37, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.4s ease,
+        background 0.3s ease;
+    cursor: default;
+    will-change: transform, box-shadow;
 }
 
 .tip-card:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow:
-    0 10px 25px rgba(249, 168, 37, 0.9),
-    inset 0 0 20px rgba(249, 168, 37, 0.4);
-  background: linear-gradient(145deg, #292f5a, #232a4a);
+    transform: translateY(-10px) scale(1.05);
+    box-shadow:
+        0 10px 25px rgba(249, 168, 37, 0.9),
+        inset 0 0 20px rgba(249, 168, 37, 0.4);
+    background: linear-gradient(145deg, #292f5a, #232a4a);
 }
 
 .tip-icon {
-  font-size: 3.5rem;
-  margin-bottom: 18px;
-  color: #f9a825;
-  text-shadow:
-    0 0 10px rgba(249, 168, 37, 0.9),
-    0 0 20px rgba(249, 168, 37, 0.7);
-  transition: text-shadow 0.3s ease;
+    font-size: 3.5rem;
+    margin-bottom: 18px;
+    color: #f9a825;
+    text-shadow:
+        0 0 10px rgba(249, 168, 37, 0.9),
+        0 0 20px rgba(249, 168, 37, 0.7);
+    transition: text-shadow 0.3s ease;
 }
 
 .tip-card:hover .tip-icon {
-  text-shadow:
-    0 0 15px rgba(249, 168, 37, 1),
-    0 0 30px rgba(249, 168, 37, 0.9),
-    0 0 40px rgba(249, 168, 37, 0.8);
+    text-shadow:
+        0 0 15px rgba(249, 168, 37, 1),
+        0 0 30px rgba(249, 168, 37, 0.9),
+        0 0 40px rgba(249, 168, 37, 0.8);
 }
 
 .tip-card h3 {
-  margin-bottom: 14px;
-  font-size: 1.5rem;
-  color: #f9a825;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+    margin-bottom: 14px;
+    font-size: 1.5rem;
+    color: #f9a825;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 .tip-card p {
-  font-size: 1rem;
-  color: #d4ca77cc;
-  text-align: center;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  font-weight: 500;
-  user-select: none;
+    font-size: 1rem;
+    color: #d4ca77cc;
+    text-align: center;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    user-select: none;
 }
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .tips-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-  }
+    .tips-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
 
-  .tip-card {
-    padding: 24px 18px;
-  }
+    .tip-card {
+        padding: 24px 18px;
+    }
 
-  .tip-icon {
-    font-size: 3rem;
-  }
+    .tip-icon {
+        font-size: 3rem;
+    }
 
-  .tip-card h3 {
-    font-size: 1.3rem;
-  }
+    .tip-card h3 {
+        font-size: 1.3rem;
+    }
 }
 
 @media (max-width: 480px) {
-  .travel-guide {
-    padding: 50px 15px;
-  }
+    .travel-guide {
+        padding: 50px 15px;
+    }
 
-  .section-title {
-    font-size: 2rem;
-  }
+    .section-title {
+        font-size: 2rem;
+    }
 
-  .section-subtitle {
-    font-size: 1rem;
-    max-width: 90%;
-  }
+    .section-subtitle {
+        font-size: 1rem;
+        max-width: 90%;
+    }
 
-  .tip-card {
-    padding: 20px 15px;
-  }
+    .tip-card {
+        padding: 20px 15px;
+    }
 
-  .tip-icon {
-    font-size: 2.5rem;
-  }
+    .tip-icon {
+        font-size: 2.5rem;
+    }
 
-  .tip-card h3 {
-    font-size: 1.15rem;
-  }
+    .tip-card h3 {
+        font-size: 1.15rem;
+    }
 }
 
 
@@ -572,7 +579,7 @@ body {
 /* footer section  */
 
 .custom-footer {
-  background: linear-gradient(135deg, #0b0e19, #141a32);
+    background: linear-gradient(135deg, #0b0e19, #141a32);
     color: #f1f1f1;
     padding: 60px 20px 30px;
     font-family: 'Segoe UI', sans-serif;

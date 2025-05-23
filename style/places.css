@@ -211,7 +211,6 @@ body {
 
 
 /* hero section  */
-
 .page-hero {
     position: relative;
     height: 50vh;
@@ -222,6 +221,7 @@ body {
     text-align: center;
     color: var(--accent);
     overflow: hidden;
+ 
 }
 
 .page-hero::before {
@@ -231,13 +231,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
     /* low opacity dark overlay */
     pointer-events: none;
     z-index: 1;
 }
 
 .page-hero-content {
+  width: 60%;
     position: relative;
     z-index: 2;
 }
@@ -262,6 +263,10 @@ body {
         height: 40vh;
         padding: 0 20px;
     }
+
+      .page-hero-content{
+        width: 100%;
+      }
 
     .page-hero-content h1 {
         font-size: 2.2rem;
